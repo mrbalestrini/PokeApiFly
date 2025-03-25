@@ -23,4 +23,4 @@ Este repositório é para fins de aprendizado, explorando conceitos de ASP.NET C
 
 4. Acesse a API via Swagger em:
     ```sh
-    http://localhost:8080/swagger
+    https://localhost:5001/swagger
