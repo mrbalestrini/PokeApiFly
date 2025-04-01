@@ -52,8 +52,11 @@ jobs:
         - name: Install dependencies
           run: npm ci
 
+        - name: Install Quasar CLI globally
+          run: npm install -g @quasar/cli
+
         - name: Build Quasar app
-          run: npm run build
+          run: quasar build
 
         - name: Install Fly.io CLI
           uses: superfly/flyctl-actions/setup-flyctl@master
@@ -62,4 +65,3 @@ jobs:
           run: flyctl deploy --config fly.toml --remote-only
           env:
             FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
