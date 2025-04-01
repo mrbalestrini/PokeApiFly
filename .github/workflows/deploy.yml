@@ -31,35 +31,34 @@ jobs:
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-    deploy-frontend:
-      name: Deploy Quasar Frontend
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v3
+  deploy-frontend:
+    name: Deploy Quasar Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: '18'
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-        - name: Install dependencies
-          run: npm install
-          working-directory: ./PokeApiFly.Web
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./PokeApiFly.Web
 
-        - name: Install Quasar CLI globally
-          run: npm install -g @quasar/cli
+      - name: Install Quasar CLI globally
+        run: npm install -g @quasar/cli
 
-        - name: Build Quasar app
-          run: quasar build
-          working-directory: ./PokeApiFly.Web
+      - name: Build Quasar app
+        run: quasar build
+        working-directory: ./PokeApiFly.Web
 
-        - name: Install Fly.io CLI
-          uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Install Fly.io CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
 
-        - name: Deploy to Fly.io
-          run: flyctl deploy --config fly.toml --remote-only
-          working-directory: ./PokeApiFly.Web
-          env:
-            FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
+      - name: Deploy to Fly.io
+        run: flyctl deploy --config fly.toml --remote-only
+        working-directory: ./PokeApiFly.Web
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
