@@ -1,5 +1,10 @@
-bin/
-obj/
-.vs/
-appsettings.json
+# Backend
+PokeApiFly/bin/
+PokeApiFly/obj/
+
+# Frontend
+PokeApiFly.Web/node_modules/
+PokeApiFly.Web/dist/
+
+# IDEs
 .vscode/
