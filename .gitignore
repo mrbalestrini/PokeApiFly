@@ -1,6 +1,6 @@
 # Backend
-PokeApiFly/bin/
-PokeApiFly/obj/
+PokeApiFly.API/bin/
+PokeApiFly.API/obj/
 
 # Frontend
 PokeApiFly.Web/node_modules/
