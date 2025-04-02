@@ -41,10 +41,18 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
+      
+      - name: ls content total
+        run: ls -l
+        working-directory: ./
+          
+      - name: ls content pokeweb
+        run: ls -l
+        working-directory: ./PokeApiFly.Web
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --no-audit --no-fund
         working-directory: ./PokeApiFly.Web
 
       - name: Install Quasar CLI globally
