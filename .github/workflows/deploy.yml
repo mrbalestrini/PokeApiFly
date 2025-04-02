@@ -41,15 +41,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      
-      - name: ls content total
-        run: ls -l
-        working-directory: ./
-          
-      - name: ls content pokeweb
-        run: ls -l
-        working-directory: ./PokeApiFly.Web
+          node-version: '22.x'
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
