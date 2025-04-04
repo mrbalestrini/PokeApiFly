@@ -44,14 +44,14 @@ jobs:
           node-version: '22.4.x'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install && npm install --only=dev
         working-directory: ./PokeApiFly.Web
 
       - name: Install Quasar CLI globally
         run: npm install -g @quasar/cli
 
       - name: Build Quasar app
-        run: quasar build
+        run: npx quasar build
         working-directory: ./PokeApiFly.Web
 
       - name: Install Fly.io CLI
